@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Content Creator Tools - Check Folbek</title>
+    <meta name="author" content="Ekky Patria Kencana (Suami Siella)" />
+    <meta name="description"
+        content="Tools sangat aman yang dapat digunakan oleh para content creator atau yang membutuhkan untuk melakukan pengecheckan siapa yang sudah di follow tapi belum folbek di IG. Tidak ada proses penyimpanan data di server ini. Jika berkenan, bantu follow dan komentar di IG @siella_">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        textarea {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 25px; display: block;">
+        <h1 style="margin-bottom: 25px;">Tools Followers Checking</h1>
+
+        <div style="display: flex; gap: 10rem;">
+            <div>
+                <p style="padding-bottom: 20px;">
+                    Hai, salam kenal semuanya... Mungkin pernah beberapa diantara temen-temen creator
+                    yang membutuhkan tools untuk dapat melakukan pengecheckan, <b>siapa yang saya follow namun belum
+                        follow balik</b>?
+                </p>
+
+                <p>
+                    <b>Cara Menggunakan Tools:</b>
+                </p>
+                <ol>
+                    <li style="padding-bottom: 10px;">
+                        Sebelum memulai, download terlebih dahulu file <b>following</b> maupun file <b>followers</b> di
+                        Instagram. Kamu dapat menyesuaikan kapan jarak waktu sebaiknya kamu ambil sesuai dengan kebutuhan
+                        kamu.
+                    </li>
+                    <li style="padding-bottom: 10px;">
+                        Setelah kamu mendownload 2 file tersebut, masukkan kedua file ke dalam tools di bawah ini.
+                    </li>
+                    <li style="padding-bottom: 10px;">
+                        Tekan tombol <b>"CHECK FOLBEK DATA"</b> untuk melakukan proses pengecheckan.
+                    </li>
+                    <li style="padding-bottom: 10px;">
+                        Kamu bisa mengcopy seluruh hasil data, baik itu data "Following", "Follower", maupun hasil "Check Folbek" cukup dengan click button <b>"COPY TO CLIPBOARD"</b>
+                    </li>
+                    <li style="padding-bottom: 10px;">
+                        Untuk lebih memudahkan, kamu juga dapat melihat reels pada IG <a href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;" target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <p>
+                    Jika berkenan, yuk bantu saya dengan cara follow dan komentar di IG <a href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;" target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
+                </p>
+                <img src="./siella__qr.png" alt="Instagram @siella_" style="width: 300px; max-width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; gap: 2rem; padding: 25px; background-color: #cecece;">
+        <div style="flex: 1 1 0%; display: flex; flex-direction: column;">
+            <div style="flex: 1 1 0%;">
+                <div style="margin-bottom: 15px;">
+                    <h2>Following</h2>
+                </div>
+
+                <form>
+                    <div>
+                        <div>
+                            <p style="padding-bottom: 10px;"><b>Masukkan File Data Following</b></p>
+                            <input type="file" name="inputFollowing" id="inputFollowing" onchange="checkFollowing()" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="margin-top: 25px;">
+                <p style="margin-bottom: 10px;">Total data: <span id="countFollowing"></span></p>
+                <textarea readonly rows="25" id="textareaFollowing" style="width: 100%;"></textarea>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="copyFollowing()"
+                    style="border: none; padding: 10px 20px;  margin:0 auto; display: block; background-color: brown; color: #FFF; border-radius: 5px; cursor: pointer;">
+                    COPY TO CLIPBOARD
+                </button>
+            </div>
+        </div>
+        <div style="flex: 1 1 0%; display: flex; flex-direction: column;">
+            <div style="flex: 1 1 0%;">
+                <div style="margin-bottom: 15px;">
+                    <h2>Follower</h2>
+                </div>
+
+                <form>
+                    <div>
+                        <div>
+                            <p style="padding-bottom: 10px;"><b>Masukkan File Data Follower</b></p>
+                            <input type="file" name="inputFollower" id="inputFollower" onchange="checkFollower()" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div style="margin-top: 25px;">
+                <p style="margin-bottom: 10px;">Total data: <span id="countFollower"></span></p>
+                <textarea readonly rows="25" id="textareaFollower" style="width: 100%;"></textarea>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="copyFollower()"
+                    style="border: none; padding: 10px 20px;  margin:0 auto; display: block; background-color: brown; color: #FFF; border-radius: 5px; cursor: pointer;">
+                    COPY TO CLIPBOARD
+                </button>
+            </div>
+        </div>
+        <div style="flex: 1 1 0%; display: flex; flex-direction: column;">
+            <div style="flex: 1 1 0%;">
+                <div style="margin-bottom: 15px;">
+                    <h2>Tidak/Belum Di-Folbek</h2>
+                </div>
+
+                <div>
+                    <p>Pastikan List Following & Follower sesuai</p>
+                    <p>Yang belum di-folbek (follow balik) bakal muncul disini :)</p>
+                </div>
+
+                <div style="margin: 15px 0;">
+                    <button onclick="checkFolbek()"
+                        style="border: none; padding: 10px 20px; background-color: orange; color: #FFF; border-radius: 5px; cursor: pointer;">
+                        CHECK FOLBEK DATA
+                    </button>
+                </div>
+            </div>
+            <div style="margin-top: 25px;">
+                <p style="margin-bottom: 10px;">Total data: <span id="countFolbek"></span></p>
+                <textarea readonly rows="25" id="textareaFolbek"
+                    style="width: 100%; background-color: #ffffe5;"></textarea>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="copyFolbek()"
+                    style="border: none; padding: 10px 20px;  margin:0 auto; display: block; background-color: brown; color: #FFF; border-radius: 5px; cursor: pointer;">
+                    COPY TO CLIPBOARD
+                </button>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            var flwing = [];
+            var flwer = [];
+
+            const checkFollowing = () => {
+                let files = document.querySelector("#inputFollowing").files;
+                document.querySelector("#textareaFollowing").value = "";
+
+                if (files.length === 0) return;
+
+                const file = files[0];
+
+                let reader = new FileReader();
+
+                reader.onload = (e) => {
+                    const file = e.target.result;
+
+                    splitText = file.split('https://www.instagram.com/');
+
+                    console.log('file.length: ', splitText.length);
+                    document.getElementById("countFollowing").textContent = splitText.length - 1;
+
+                    for (i = 1; i < splitText.length; i++) {
+                        currVal = document.querySelector("#textareaFollowing").value;
+                        var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
+                        flwing.push(getUsername);
+
+                        // console.log('test3: ', getUsername);
+                        if (currVal !== "") {
+                            document.querySelector("#textareaFollowing").value = currVal + "\n" + getUsername
+                        } else {
+                            document.querySelector("#textareaFollowing").value = getUsername
+                        }
+
+                    }
+                };
+
+                reader.onerror = (e) => alert(e.target.error.name);
+                reader.readAsText(file);
+            }
+
+            const checkFollower = () => {
+                let files = document.querySelector("#inputFollower").files;
+                document.querySelector("#textareaFollower").value = "";
+
+                if (files.length === 0) return;
+
+                const file = files[0];
+
+                let reader = new FileReader();
+
+                reader.onload = (e) => {
+                    const file = e.target.result;
+
+                    splitText = file.split('https://www.instagram.com/');
+
+                    console.log('file.length: ', splitText.length);
+                    document.getElementById("countFollower").textContent = splitText.length - 1;
+
+                    for (i = 1; i < splitText.length; i++) {
+                        currVal = document.querySelector("#textareaFollower").value;
+                        var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
+                        flwer.push(getUsername);
+
+                        // console.log('test3: ', getUsername);
+                        if (currVal !== "") {
+                            document.querySelector("#textareaFollower").value = currVal + "\n" + getUsername
+                        } else {
+                            document.querySelector("#textareaFollower").value = getUsername
+                        }
+
+                    }
+                };
+
+                reader.onerror = (e) => alert(e.target.error.name);
+                reader.readAsText(file);
+            }
+
+            const checkFolbek = () => {
+                // console.log('following: ', flwing);
+                // console.log('follower: ', flwer);
+
+                var final = flwing.filter(function (item) {
+                    return !flwer.includes(item.split('.')[0]);
+                })
+
+                console.log('not folbek: ', final);
+                document.getElementById("countFolbek").textContent = final.length;
+
+                for (i = 0; i < final.length; i++) {
+                    currVal = document.querySelector("#textareaFolbek").value;
+                    if (currVal !== "") {
+                        document.querySelector("#textareaFolbek").value = currVal + "\n" + final[i]
+                    } else {
+                        document.querySelector("#textareaFolbek").value = final[i]
+                    }
+                }
+            }
+
+            const copyFollowing = () => {
+                // Get the text field
+                var copyText = document.getElementById("textareaFollowing");
+
+                // Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(copyText.value);
+            }
+            const copyFollower = () => {
+                // Get the text field
+                var copyText = document.getElementById("textareaFollower");
+
+                // Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(copyText.value);
+            }
+            const copyFolbek = () => {
+                // Get the text field
+                var copyText = document.getElementById("textareaFolbek");
+
+                // Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(copyText.value);
+            }
+        </script>
+</body>
+
+</html>
