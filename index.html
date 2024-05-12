@@ -33,6 +33,23 @@
             margin: 0;
             padding: 0;
         }
+
+        .section-greeting {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .section-tools {
+            flex-direction: column;
+        }
+        @media (min-width: 1024px) {
+            .section-greeting {
+                flex-direction: row;
+                gap: 10rem;
+            }
+            .section-tools {
+                flex-direction: row;
+            }
+        }
     </style>
 </head>
 
@@ -40,7 +57,7 @@
     <div style="padding: 25px; display: block;">
         <h1 style="margin-bottom: 25px;">Tools Followers Checking</h1>
 
-        <div style="display: flex; gap: 10rem;">
+        <div class="section-greeting" style="display: flex;">
             <div>
                 <p style="padding-bottom: 20px;">
                     Hai, salam kenal semuanya... Mungkin pernah beberapa diantara temen-temen creator
@@ -79,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div style="display: flex; gap: 2rem; padding: 25px; background-color: #cecece;">
+    <div class="section-tools" style="display: flex; gap: 2rem; padding: 25px; background-color: #cecece;">
         <div style="flex: 1 1 0%; display: flex; flex-direction: column;">
             <div style="flex: 1 1 0%;">
                 <div style="margin-bottom: 15px;">
@@ -97,7 +114,7 @@
             </div>
             <div style="margin-top: 25px;">
                 <p style="margin-bottom: 10px;">Total data: <span id="countFollowing"></span></p>
-                <textarea readonly rows="25" id="textareaFollowing" style="width: 100%;"></textarea>
+                <textarea readonly rows="20" id="textareaFollowing" style="width: 100%;"></textarea>
             </div>
             <div style="margin-top: 10px;">
                 <button onclick="copyFollowing()"
@@ -124,7 +141,7 @@
             </div>
             <div style="margin-top: 25px;">
                 <p style="margin-bottom: 10px;">Total data: <span id="countFollower"></span></p>
-                <textarea readonly rows="25" id="textareaFollower" style="width: 100%;"></textarea>
+                <textarea readonly rows="20" id="textareaFollower" style="width: 100%;"></textarea>
             </div>
             <div style="margin-top: 10px;">
                 <button onclick="copyFollower()"
@@ -153,7 +170,7 @@
             </div>
             <div style="margin-top: 25px;">
                 <p style="margin-bottom: 10px;">Total data: <span id="countFolbek"></span></p>
-                <textarea readonly rows="25" id="textareaFolbek"
+                <textarea readonly rows="20" id="textareaFolbek"
                     style="width: 100%; background-color: #ffffe5;"></textarea>
             </div>
             <div style="margin-top: 10px;">
