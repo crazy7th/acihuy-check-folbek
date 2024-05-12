@@ -11,6 +11,13 @@
     <meta name="description"
         content="Tools sangat aman yang dapat digunakan oleh para content creator atau yang membutuhkan untuk melakukan pengecheckan siapa yang sudah di follow tapi belum folbek di IG. Tidak ada proses penyimpanan data di server ini. Jika berkenan, bantu follow dan komentar di IG @siella_">
     <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+            font-feature-settings: normal;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-variation-settings: normal;
+        }
+
         html,
         body {
             padding: 0;
@@ -38,14 +45,17 @@
             flex-direction: column;
             gap: 2rem;
         }
+
         .section-tools {
             flex-direction: column;
         }
+
         @media (min-width: 1024px) {
             .section-greeting {
                 flex-direction: row;
                 gap: 10rem;
             }
+
             .section-tools {
                 flex-direction: row;
             }
@@ -71,7 +81,8 @@
                 <ol>
                     <li style="padding-bottom: 10px;">
                         Sebelum memulai, download terlebih dahulu file <b>following</b> maupun file <b>followers</b> di
-                        Instagram. Kamu dapat menyesuaikan kapan jarak waktu sebaiknya kamu ambil sesuai dengan kebutuhan
+                        Instagram. Kamu dapat menyesuaikan kapan jarak waktu sebaiknya kamu ambil sesuai dengan
+                        kebutuhan
                         kamu.
                     </li>
                     <li style="padding-bottom: 10px;">
@@ -81,16 +92,21 @@
                         Tekan tombol <b>"CHECK FOLBEK DATA"</b> untuk melakukan proses pengecheckan.
                     </li>
                     <li style="padding-bottom: 10px;">
-                        Kamu bisa mengcopy seluruh hasil data, baik itu data "Following", "Follower", maupun hasil "Check Folbek" cukup dengan click button <b>"COPY TO CLIPBOARD"</b>
+                        Kamu bisa mengcopy seluruh hasil data, baik itu data "Following", "Follower", maupun hasil
+                        "Check Folbek" cukup dengan click button <b>"COPY TO CLIPBOARD"</b>
                     </li>
                     <li style="padding-bottom: 10px;">
-                        Untuk lebih memudahkan, kamu juga dapat melihat reels pada IG <a href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;" target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
+                        Untuk lebih memudahkan, kamu juga dapat melihat reels pada IG <a
+                            href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;"
+                            target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
                     </li>
                 </ol>
             </div>
             <div>
                 <p>
-                    Jika berkenan, yuk bantu saya dengan cara follow dan komentar di IG <a href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;" target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
+                    Jika berkenan, yuk bantu saya dengan cara follow dan komentar di IG <a
+                        href="https://www.instagram.com/siella_/" style="text-decoration: none; color: brown;"
+                        target="_blank" rel="noopener noreferrer"><b>@siella_</b></a>
                 </p>
                 <img src="./siella__qr.png" alt="Instagram @siella_" style="width: 300px; max-width: 100%;">
             </div>
@@ -106,7 +122,7 @@
                 <form>
                     <div>
                         <div>
-                            <p style="padding-bottom: 10px;"><b>Masukkan File Data Following</b></p>
+                            <p style="padding-bottom: 10px;"><b>Upload File Data Following <span style="color: red;">(WAJIB*)</span></b></p>
                             <input type="file" name="inputFollowing" id="inputFollowing" onchange="checkFollowing()" />
                         </div>
                     </div>
@@ -132,11 +148,10 @@
                 <form>
                     <div>
                         <div>
-                            <p style="padding-bottom: 10px;"><b>Masukkan File Data Follower</b></p>
+                            <p style="padding-bottom: 10px;"><b>Upload File Data Follower <span style="color: red;">(WAJIB*)</span></b></p>
                             <input type="file" name="inputFollower" id="inputFollower" onchange="checkFollower()" />
                         </div>
                     </div>
-
                 </form>
             </div>
             <div style="margin-top: 25px;">
@@ -180,141 +195,145 @@
                 </button>
             </div>
         </div>
+    </div>
 
+    <div style="padding: 15px; display: flex; align-items: center; justify-content: center; background-color: #000; color: #FFF;">
+        © 2024 | contributed by @siella_
+    </div>
 
-        <script type="text/javascript">
-            var flwing = [];
-            var flwer = [];
+    <script type="text/javascript">
+        var flwing = [];
+        var flwer = [];
 
-            const checkFollowing = () => {
-                let files = document.querySelector("#inputFollowing").files;
-                document.querySelector("#textareaFollowing").value = "";
+        const checkFollowing = () => {
+            let files = document.querySelector("#inputFollowing").files;
+            document.querySelector("#textareaFollowing").value = "";
 
-                if (files.length === 0) return;
+            if (files.length === 0) return;
 
-                const file = files[0];
+            const file = files[0];
 
-                let reader = new FileReader();
+            let reader = new FileReader();
 
-                reader.onload = (e) => {
-                    const file = e.target.result;
+            reader.onload = (e) => {
+                const file = e.target.result;
 
-                    splitText = file.split('https://www.instagram.com/');
+                splitText = file.split('https://www.instagram.com/');
 
-                    console.log('file.length: ', splitText.length);
-                    document.getElementById("countFollowing").textContent = splitText.length - 1;
+                console.log('file.length: ', splitText.length);
+                document.getElementById("countFollowing").textContent = splitText.length - 1;
 
-                    for (i = 1; i < splitText.length; i++) {
-                        currVal = document.querySelector("#textareaFollowing").value;
-                        var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
-                        flwing.push(getUsername);
+                for (i = 1; i < splitText.length; i++) {
+                    currVal = document.querySelector("#textareaFollowing").value;
+                    var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
+                    flwing.push(getUsername);
 
-                        // console.log('test3: ', getUsername);
-                        if (currVal !== "") {
-                            document.querySelector("#textareaFollowing").value = currVal + "\n" + getUsername
-                        } else {
-                            document.querySelector("#textareaFollowing").value = getUsername
-                        }
-
-                    }
-                };
-
-                reader.onerror = (e) => alert(e.target.error.name);
-                reader.readAsText(file);
-            }
-
-            const checkFollower = () => {
-                let files = document.querySelector("#inputFollower").files;
-                document.querySelector("#textareaFollower").value = "";
-
-                if (files.length === 0) return;
-
-                const file = files[0];
-
-                let reader = new FileReader();
-
-                reader.onload = (e) => {
-                    const file = e.target.result;
-
-                    splitText = file.split('https://www.instagram.com/');
-
-                    console.log('file.length: ', splitText.length);
-                    document.getElementById("countFollower").textContent = splitText.length - 1;
-
-                    for (i = 1; i < splitText.length; i++) {
-                        currVal = document.querySelector("#textareaFollower").value;
-                        var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
-                        flwer.push(getUsername);
-
-                        // console.log('test3: ', getUsername);
-                        if (currVal !== "") {
-                            document.querySelector("#textareaFollower").value = currVal + "\n" + getUsername
-                        } else {
-                            document.querySelector("#textareaFollower").value = getUsername
-                        }
-
-                    }
-                };
-
-                reader.onerror = (e) => alert(e.target.error.name);
-                reader.readAsText(file);
-            }
-
-            const checkFolbek = () => {
-                // console.log('following: ', flwing);
-                // console.log('follower: ', flwer);
-
-                var final = flwing.filter(function (item) {
-                    return !flwer.includes(item.split('.')[0]);
-                })
-
-                console.log('not folbek: ', final);
-                document.getElementById("countFolbek").textContent = final.length;
-
-                for (i = 0; i < final.length; i++) {
-                    currVal = document.querySelector("#textareaFolbek").value;
+                    // console.log('test3: ', getUsername);
                     if (currVal !== "") {
-                        document.querySelector("#textareaFolbek").value = currVal + "\n" + final[i]
+                        document.querySelector("#textareaFollowing").value = currVal + "\n" + getUsername
                     } else {
-                        document.querySelector("#textareaFolbek").value = final[i]
+                        document.querySelector("#textareaFollowing").value = getUsername
                     }
+
+                }
+            };
+
+            reader.onerror = (e) => alert(e.target.error.name);
+            reader.readAsText(file);
+        }
+
+        const checkFollower = () => {
+            let files = document.querySelector("#inputFollower").files;
+            document.querySelector("#textareaFollower").value = "";
+
+            if (files.length === 0) return;
+
+            const file = files[0];
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                const file = e.target.result;
+
+                splitText = file.split('https://www.instagram.com/');
+
+                console.log('file.length: ', splitText.length);
+                document.getElementById("countFollower").textContent = splitText.length - 1;
+
+                for (i = 1; i < splitText.length; i++) {
+                    currVal = document.querySelector("#textareaFollower").value;
+                    var getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
+                    flwer.push(getUsername);
+
+                    // console.log('test3: ', getUsername);
+                    if (currVal !== "") {
+                        document.querySelector("#textareaFollower").value = currVal + "\n" + getUsername
+                    } else {
+                        document.querySelector("#textareaFollower").value = getUsername
+                    }
+
+                }
+            };
+
+            reader.onerror = (e) => alert(e.target.error.name);
+            reader.readAsText(file);
+        }
+
+        const checkFolbek = () => {
+            // console.log('following: ', flwing);
+            // console.log('follower: ', flwer);
+
+            var final = flwing.filter(function (item) {
+                return !flwer.includes(item.split('.')[0]);
+            })
+
+            console.log('not folbek: ', final);
+            document.getElementById("countFolbek").textContent = final.length;
+
+            for (i = 0; i < final.length; i++) {
+                currVal = document.querySelector("#textareaFolbek").value;
+                if (currVal !== "") {
+                    document.querySelector("#textareaFolbek").value = currVal + "\n" + final[i]
+                } else {
+                    document.querySelector("#textareaFolbek").value = final[i]
                 }
             }
+        }
 
-            const copyFollowing = () => {
-                // Get the text field
-                var copyText = document.getElementById("textareaFollowing");
+        const copyFollowing = () => {
+            // Get the text field
+            var copyText = document.getElementById("textareaFollowing");
 
-                // Select the text field
-                copyText.select();
-                copyText.setSelectionRange(0, 99999); // For mobile devices
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
 
-                // Copy the text inside the text field
-                navigator.clipboard.writeText(copyText.value);
-            }
-            const copyFollower = () => {
-                // Get the text field
-                var copyText = document.getElementById("textareaFollower");
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+        }
+        const copyFollower = () => {
+            // Get the text field
+            var copyText = document.getElementById("textareaFollower");
 
-                // Select the text field
-                copyText.select();
-                copyText.setSelectionRange(0, 99999); // For mobile devices
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
 
-                // Copy the text inside the text field
-                navigator.clipboard.writeText(copyText.value);
-            }
-            const copyFolbek = () => {
-                // Get the text field
-                var copyText = document.getElementById("textareaFolbek");
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+        }
+        const copyFolbek = () => {
+            // Get the text field
+            var copyText = document.getElementById("textareaFolbek");
 
-                // Select the text field
-                copyText.select();
-                copyText.setSelectionRange(0, 99999); // For mobile devices
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
 
-                // Copy the text inside the text field
-                navigator.clipboard.writeText(copyText.value);
-            }
-        </script>
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
 </body>
 
 </html>
