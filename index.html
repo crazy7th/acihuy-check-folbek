@@ -714,9 +714,13 @@
             // console.log('following: ', flwing);
             // console.log('follower: ', flwer);
 
-            var final = flwing.filter(function (item) {
-                return !flwer.includes(item.split('.')[0]);
-            })
+            // this is incorrect logic
+            // var final = flwing.filter(function (item) {
+            //     return !flwer.includes(item.split('.')[0]);
+            // })
+
+            // correcting logic
+            var final = flwing.filter(val => !flwer.includes(val))
 
             console.log('not folbek: ', final);
             document.getElementById("countFolbek").textContent = final.length;
