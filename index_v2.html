@@ -1,0 +1,140 @@
+<script>
+    let followers = [{ username: "" }];
+let followings = [{ username: "" }];
+let folbek = [{ username: "" }];
+
+// =====> igname = Username IG yang akan dicheck
+function cekfolbek(igname) {
+    const username = igname;
+    followers = [];
+    followings = [];
+    folbek = [];
+
+    (async () => {
+        try {
+            console.log(`PROSES DIJALANKAN...`);
+            console.log(`Semakin banyak followers & following, proses akan semakin lama`);
+
+            // proses mengetahui id instagram dari username
+            const userQueryRes = await fetch(
+                `https://www.instagram.com/web/search/topsearch/?query=${username}`
+            );
+            const userQueryJson = await userQueryRes.json();
+            const userId = userQueryJson.users.map(u => u.user)
+                .filter(
+                    u => u.username === username
+                )[0].pk;
+
+            // 1. check followers
+            console.log(`========================================`);
+            console.log(`STEP-1 Melakukan pengecheckan data followers...`);
+            let after = null;
+            let has_next = true;
+            while (has_next) {
+                await fetch(
+                    `https://www.instagram.com/graphql/query/?query_hash=c76146de99bb02f6415203be841dd25a&variables=` +
+                    encodeURIComponent(
+                        JSON.stringify({
+                            id: userId,
+                            include_reel: true,
+                            fetch_mutual: true,
+                            first: 50,
+                            after: after,
+                        })
+                    )
+                )
+                    .then((res) => res.json())
+                    .then((res) => {
+                        has_next = res.data.user.edge_followed_by.page_info.has_next_page;
+                        after = res.data.user.edge_followed_by.page_info.end_cursor;
+                        followers = followers.concat(
+                            res.data.user.edge_followed_by.edges.map(({ node }) => {
+                                return {
+                                    username: node.username,
+                                };
+                            })
+                        );
+                    });
+            }
+            console.log(`Data followers sudah didapatkan...`);
+
+            // 2. check following
+            console.log(`========================================`);
+            console.log(`STEP-2 Melakukan pengecheckan data following...`);
+            after = null;
+            has_next = true;
+            while (has_next) {
+                await fetch(
+                    `https://www.instagram.com/graphql/query/?query_hash=d04b0a864b4b54837c0d870b0e77e076&variables=` +
+                    encodeURIComponent(
+                        JSON.stringify({
+                            id: userId,
+                            include_reel: true,
+                            fetch_mutual: true,
+                            first: 50,
+                            after: after,
+                        })
+                    )
+                )
+                    .then((res) => res.json())
+                    .then((res) => {
+                        has_next = res.data.user.edge_follow.page_info.has_next_page;
+                        after = res.data.user.edge_follow.page_info.end_cursor;
+                        followings = followings.concat(
+                            res.data.user.edge_follow.edges.map(({ node }) => {
+                                return {
+                                    username: node.username,
+                                };
+                            })
+                        );
+                    });
+            }
+            console.log(`Data following sudah didapatkan...`);
+
+            // 3. check yg gak folbek
+            console.log(`========================================`);
+            console.log(`STEP-3 FINAL Membandingkan data followers & following`);
+            folbek = followings.filter((following) => {
+                return !followers.find(
+                    (follower) => follower.username === following.username
+                );
+            });
+
+            console.log(`Data following sudah didapatkan...`);
+            console.log('=====> total yg gak folbek kamu: ', folbek.length);
+
+            console.log(`========================================`);
+
+            console.log(`PROSES SELESAI...`);
+            console.log(`'lihatHasil()' & tekan enter : untuk melihat di console & copy data ke clipboard`);
+            console.log(`'copyData()' & tekan enter : untuk langsung copy data ke clipboard`);
+        } catch (err) {
+            console.log({ err });
+        }
+    })();
+}
+
+function lihatHasil() {
+    console.log('=====> berikut adalah username IG yg gak folbek kamu: ');
+    for (i = 0; i < folbek.length; i++) {
+        console.log(folbek[i].username);
+    }
+
+    let resFolbek = folbek.map(eval(a => a.username));
+    copy(resFolbek);
+    console.log(`========================================`);
+    console.log( `Data sudah dicopy ke clipboard, silakan paste di media yang kamu inginkan`);
+}
+function copyData() {
+    let resFolbek = folbek.map(a => a.username);
+    JSON.stringify(resFolbek);
+    const listResult = model.replace(/"/g,'');
+
+    copy(listResult);
+    console.log(`========================================`);
+    console.log( `Data sudah dicopy ke clipboard, silakan paste di media yang kamu inginkan`);
+}
+
+console.log('Untuk memulai, silakan ketik cekfolbek(namaIG) lalu tekan enter');
+console.log('contoh: cekfolbek("siella_")');
+</script>

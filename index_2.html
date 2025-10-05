@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Prism.js theme CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+            font-feature-settings: normal;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-variation-settings: normal;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        textarea {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E015SNMTP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2E015SNMTP');
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>
+
+            <div>
+                <span class="text-gray-200 text-xl font-bold">Code Snippet</span>
+                <button id="copyButton">Copy</button>
+            </div>
+
+            <div style="overflow: hidden; overflow-y: auto; height: 450px;">
+                <pre class="language-javascript"><code class="text-sm">let followers = [{ username: "" }];
+let followings = [{ username: "" }];
+let folbek = [{ username: "" }];
+
+// =====> igname = Username IG yang akan dicheck
+function cekfolbek(igname) {
+    const username = igname;
+    followers = [];
+    followings = [];
+    folbek = [];
+
+    (async () => {
+        try {
+            console.log(`PROSES DIJALANKAN...`);
+            console.log(`Semakin banyak followers & following, proses akan semakin lama`);
+
+            // proses mengetahui id instagram dari username
+            const userQueryRes = await fetch(
+                `https://www.instagram.com/web/search/topsearch/?query=${username}`
+            );
+            const userQueryJson = await userQueryRes.json();
+            const userId = userQueryJson.users.map(u => u.user)
+                .filter(
+                    u => u.username === username
+                )[0].pk;
+
+            // 1. check followers
+            console.log(`========================================`);
+            console.log(`STEP-1 Melakukan pengecheckan data followers...`);
+            let after = null;
+            let has_next = true;
+            while (has_next) {
+                await fetch(
+                    `https://www.instagram.com/graphql/query/?query_hash=c76146de99bb02f6415203be841dd25a&variables=` +
+                    encodeURIComponent(
+                        JSON.stringify({
+                            id: userId,
+                            include_reel: true,
+                            fetch_mutual: true,
+                            first: 24,
+                            after: after,
+                        })
+                    )
+                )
+                    .then((res) => res.json())
+                    .then((res) => {
+                        has_next = res.data.user.edge_followed_by.page_info.has_next_page;
+                        after = res.data.user.edge_followed_by.page_info.end_cursor;
+                        followers = followers.concat(
+                            res.data.user.edge_followed_by.edges.map(({ node }) => {
+                                return {
+                                    username: node.username,
+                                };
+                            })
+                        );
+                    });
+            }
+            console.log(`Data followers sudah didapatkan...`);
+
+            // 2. check following
+            console.log(`========================================`);
+            console.log(`STEP-2 Melakukan pengecheckan data following...`);
+            after = null;
+            has_next = true;
+            while (has_next) {
+                await fetch(
+                    `https://www.instagram.com/graphql/query/?query_hash=d04b0a864b4b54837c0d870b0e77e076&variables=` +
+                    encodeURIComponent(
+                        JSON.stringify({
+                            id: userId,
+                            include_reel: true,
+                            fetch_mutual: true,
+                            first: 24,
+                            after: after,
+                        })
+                    )
+                )
+                    .then((res) => res.json())
+                    .then((res) => {
+                        has_next = res.data.user.edge_follow.page_info.has_next_page;
+                        after = res.data.user.edge_follow.page_info.end_cursor;
+                        followings = followings.concat(
+                            res.data.user.edge_follow.edges.map(({ node }) => {
+                                return {
+                                    username: node.username,
+                                };
+                            })
+                        );
+                    });
+            }
+            console.log(`Data following sudah didapatkan...`);
+
+            // 3. check yg gak folbek
+            console.log(`========================================`);
+            console.log(`STEP-3 FINAL Membandingkan data followers & following`);
+            folbek = followings.filter((following) => {
+                return !followers.find(
+                    (follower) => follower.username === following.username
+                );
+            });
+
+            console.log(`Data following sudah didapatkan...`);
+            console.log('=====> total yg gak folbek kamu: ', folbek.length);
+
+            console.log(`========================================`);
+
+            console.log(`PROSES SELESAI...`);
+            console.log(`'lihatHasil()' & tekan enter : untuk melihat di console & copy data ke clipboard`);
+            console.log(`'copyData()' & tekan enter : untuk langsung copy data ke clipboard`);
+        } catch (err) {
+            console.log({ err });
+        }
+    })();
+}
+
+function lihatHasil() {
+    console.log('=====> berikut adalah username IG yg gak folbek kamu: ');
+    for (i = 0; i < folbek.length; i++) {
+        console.log(folbek[i].username);
+    }
+    let resFolbek = folbek.map(a => a.username);
+    <!-- let listResult = resFolbek.map(eval); -->
+
+    copy(resFolbek);
+    console.log(`========================================`);
+    console.log( `Data sudah dicopy ke clipboard, silakan paste di media yang kamu inginkan`);
+}
+function copyData() {
+    let resFolbek = folbek.map(a => a.username);
+    <!-- let listResult = resFolbek.map(eval); -->
+
+    copy(listResult);
+    console.log(`========================================`);
+    console.log( `Data sudah dicopy ke clipboard, silakan paste di media yang kamu inginkan`);
+}
+
+console.log('Untuk memulai, silakan ketik cekfolbek(namaIG) lalu tekan enter');
+console.log('contoh: cekfolbek("siella_")');</code></pre>
+            </div>
+        </div>
+
+        <div>
+            <p>Convert JSON to List</p>
+            <textarea id="folbekJSON" rows=20 style="width: 100%;"></textarea>
+            <button onclick="convertFolbek()">Convert Data</button>
+
+            <textarea id="folbekConvert" rows=20 style="width: 100%; margin-top: 16px;"></textarea>
+        </div>
+    </div>
+
+    <!-- JavaScript to copy the code -->
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function () {
+            const codeElement = document.querySelector('.language-javascript code');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code sudah dicopy, siap dijalankan di console IG kamu!');
+        });
+    </script>
+
+    <!-- JavaScript to convert JSON data -->
+    <script>
+        function convertFolbek() {
+            var data = document.getElementById('folbekJSON').value;
+            var objData = JSON.parse(data);
+            for (i = 0; i < objData.length; i++) {
+                currVal = document.querySelector("#folbekConvert").value;
+
+                if (currVal !== "") {
+                    document.querySelector("#folbekConvert").value = currVal + "\n" + objData[i]
+                } else {
+                    document.querySelector("#folbekConvert").value = objData[i]
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
