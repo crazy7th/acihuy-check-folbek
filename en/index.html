@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <title>Tools Check Folbek | Tiktok: @maysiella | IG: @siella_</title>
+    <title>Check Follow Back 2.0 | Tiktok: @maysiella | IG: @siella_</title>
     <link href="../assets/css/styles.css" rel="stylesheet" />
     <meta name="description"
-        content="Tools sangat aman yang dapat digunakan oleh para content creator atau yang membutuhkan untuk melakukan pengecheckan siapa yang sudah di follow tapi belum folbek di IG. Tidak ada proses penyimpanan data di server ini. Jika berkenan, bantu follow dan komentar di IG @siella_">
+        content="A safe tool to see who hasn’t followed you back on Instagram. 100% private. Follow @siella_ on Instagram & @maysiella on TikTok for updates!">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E015SNMTP"></script>
     <script>
@@ -22,6 +22,27 @@
 </head>
 
 <body class="bg-gray-100 flex flex-col space-y-1 md:space-y-4 h-screen">
+
+    <div class="absolute top-[80px] right-0">
+        <div class="relative inline-block text-left">
+            <!-- Trigger button -->
+            <button id="langBtn"
+                class="flex items-center gap-2 bg-gray-600 hover:bg-gray-500 text-white rounded-l-3xl px-4 py-3 focus:outline-none">
+                🇬🇧 EN
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div id="langMenu"
+                class="absolute right-0 w-20 bg-white text-gray-800 border border-gray-200 hidden">
+                <a href="../index.html" class="block px-4 py-2 hover:bg-gray-200">🇮🇩 ID</a>
+                <a href="#" class="block px-4 py-2 bg-gray-100 hover:bg-gray-200">🇬🇧 EN</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Step Indicator (Sticky) -->
     <div class="sticky top-0 z-20">
@@ -550,7 +571,7 @@
                 validateNextBtn();
             } else if (currentStep === steps.length - 1) {
                 prevBtn.classList.add("hidden");
-                nextBtn.textContent = "Check Akun Lainnya";
+                nextBtn.textContent = "Check Another Account";
                 nextBtn.classList.add("ml-auto"); // geser kanan
                 resetBtn.classList.add("hidden");
                 validateNextBtn();
@@ -803,12 +824,7 @@
                 currentStep = 0;
                 updateStep();
             }
-
-            if (unflw.length === 0) {
-
-            }
         });
-
     </script>
 
     <script>
@@ -889,6 +905,23 @@
         document.getElementById("btnCopy").addEventListener("click", () => copyToClipboard(unflw));
         document.getElementById("btnDownload").addEventListener("click", () => downloadTxtFile(unflw, filename));
         // document.getElementById("btnSupport").addEventListener("click", () => openTikTok(tiktokProfileURL));
+    </script>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        const langMenu = document.getElementById('langMenu');
+
+        // Toggle dropdown visibility
+        langBtn.addEventListener('click', () => {
+            langMenu.classList.toggle('hidden');
+        });
+
+        // Optional: tutup dropdown kalau klik di luar
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                langMenu.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 
