@@ -152,42 +152,42 @@
             <div id="step-2" class="step-content flex-1 overflow-y-auto hidden">
                 <div class="flex flex-col overflow-hidden h-full">
                     <div class="flex-1 flex flex-col overflow-y-auto">
-                        <h2 class="text-xl font-bold mb-4 text-center">MENYIAPKAN DATA</h2>
+                        <h2 class="text-xl font-bold mb-4 text-center">PREPARING DATA</h2>
                         <div class="space-y-2 text-xs mb-4 overflow-y-auto">
-                            <p>Lakukan pengunduhan data following & follower dari Instagram kamu. Sebaiknya kamu lakukan
-                                ini
-                                sendiri,
-                                tanpa membagi akun kamu kepada orang lain.</p>
-                            <p>Tonton video tutorial di akun <a
+                            <p>Download your Instagram following and follower data. It’s best to do this yourself
+                                without sharing your account with anyone else.</p>
+                            <p>Watch the tutorial video on the <a
                                     href="https://www.tiktok.com/@maysiella/video/7371676362555313413?is_from_webapp=1&sender_device=pc&web_id=7477630731255957000"
-                                    target="_blank" rel="noopener noreferrer" class="text-red-800">@siella_ </a>untuk
-                                memudahkan.</p>
-                            <p>Lokasi unduh file ada di:</p>
+                                    target="_blank" rel="noopener noreferrer" class="text-red-800">@siella_</a> to make
+                                it easier</p>
+                            <p>The file download location can be found at:</p>
 
                             <ul class="list-disc pl-6">
                                 <li>
-                                    Pengaturan dan aktivitas
+                                    Settings and activity
                                 </li>
                                 <li>
-                                    Pusat Akun
+                                    Accounts Center
                                 </li>
                                 <li>
-                                    Informasi dan izin Anda
+                                    Your information and permissions
                                 </li>
                                 <li>
-                                    Ekspor informasi Anda
+                                    Export your information
                                 </li>
                                 <li>
-                                    Buat ekspor
+                                    Click <b>Create export</b> button
                                 </li>
                                 <li>
-                                    Ekspor ke perangkat:
+                                    Export to device:
                                     <ul class="list-[circle] pl-6">
                                         <li>
-                                            <b>Sesuaikan informasi:</b> cukup centang <b>Pengikut dan mengikuti</b>
+                                            <b>Customize information:</b> Clear all and only check on <b>Followers and
+                                                following</b>, then save
                                         </li>
                                         <li>
-                                            <b>Rentang waktu:</b> agar lebih akurat, pilih <b>Sepanjang Waktu</b>
+                                            <b>Date range:</b> to make it more accurate, choose <b>All time</b>
+                                            (important!)
                                         </li>
                                         <li>
                                             <b>Format:</b> pilih <b>HTML</b> (default)
@@ -195,15 +195,13 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    Klik <b>Mulai ekspor</b>
+                                    Click <b>Start export</b>
                                 </li>
                                 <li>
-                                    Tunggu beberapa menit.
-                                    <span class="hidden md:inline">Semakin banyak following & followernya, akan
-                                        membutuhkan
-                                        waktu yang semakin lama. Pastikan juga informasi yang diunduh hanya centang
-                                        bagian
-                                        <b>Pengikut dan mengikuti</b></span>
+                                    Wait a few minutes.
+                                    <span class="hidden md:inline">The more followings and followers you have, the
+                                        longer it will take. Make sure that when downloading the data, only the
+                                        <b>Followers and Following</b> options are checked.</span>
                                 </li>
                             </ul>
                         </div>
@@ -218,8 +216,8 @@
                         </div>
                         <!-- Teks info -->
                         <div class="flex flex-col md:flex-row md:space-x-1">
-                            <span>Tools ini 100% dijamin aman.</span>
-                            <a href="#" class="font-medium underline hover:text-blue-900">Lihat cara kerjanya</a>
+                            <span>This tool is 100% safe.</span>
+                            <a href="#" class="font-medium underline hover:text-blue-900">See how it works</a>
                         </div>
                     </div>
                 </div>
@@ -232,12 +230,12 @@
                     <div class="space-y-4 flex-1 flex flex-col">
                         <div class="flex-1 space-y-1">
                             <p>
-                                <b>1. File Followers:</b>
+                                <b>1. Followers File:</b>
                             </p>
                             <label
                                 class="relative overflow-hidden text-gray-600 block border-2 border-dashed border-gray-400 rounded-lg p-6 md:py-10 cursor-pointer hover:bg-gray-50">
-                                <p>Drop file <b>Follower</b> di sini atau klik untuk upload</p>
-                                <p>Nama file: <b>followers_1.html</b></p>
+                                <p>Drop your <b>Followers</b> file here or click to upload</p>
+                                <p>File name: <b>followers_1.html</b></p>
                                 <input type="file" id="inputFollower" class="hidden" onchange="checkFollower()" />
                                 <!-- ✅ overlay hijau -->
                                 <div id="followerOverlay"
@@ -253,12 +251,12 @@
                         </div>
                         <div class="flex-1 space-y-1">
                             <p>
-                                <b>2. File Following:</b>
+                                <b>2. Following File:</b>
                             </p>
                             <label
                                 class="relative text-gray-600 block border-2 border-dashed border-gray-400 rounded-lg p-6 md:py-10 cursor-pointer hover:bg-gray-50">
-                                <p>Drop file <b>Following</b> di sini atau klik untuk upload</p>
-                                <p>Nama file: <b>following.html</b></p>
+                                <p>Drop your <b>Followin</b> file here or click to upload</p>
+                                <p>File name: <b>following.html</b></p>
                                 <input type="file" id="inputFollowing" class="hidden" onchange="checkFollowing()" />
                                 <!-- ✅ overlay hijau -->
                                 <div id="followingOverlay"
@@ -282,8 +280,8 @@
                 <div id="resultProcess" class="max-w-md flex flex-col space-y-4">
                     <!-- Title & Text -->
                     <div class="text-center">
-                        <h2 class="text-xl font-bold mb-2">DATA SEDANG DIPROSES</h2>
-                        <p class="text-gray-600">Sedang memproses data Anda, mohon tunggu...</p>
+                        <h2 class="text-xl font-bold mb-2">DATA IS BEING PROCESSED</h2>
+                        <p class="text-gray-600">Processing your data, please wait</p>
                     </div>
 
                     <!-- Loading dots -->
@@ -296,9 +294,9 @@
                 <div id="resultShow" class="max-w-md flex flex-col space-y-4 hidden">
                     <!-- Title & Text -->
                     <div class="text-center">
-                        <h2 class="text-xl font-bold mb-2">DATA SELESAI DIPROSES ✅</h2>
+                        <h2 class="text-xl font-bold mb-2">DATA PROCESSING COMPLETE ✅</h2>
                         <p id="infoUnfollow" class="mt-4 text-center text-gray-600">
-                            Tidak ada user yang unfollow 🎉
+                            🎉 No users have unfollowed you!
                         </p>
                     </div>
                 </div>
@@ -341,7 +339,8 @@
                     </div>
 
                     <!-- Feedback text -->
-                    <p id="actionFeedback" class="mt-3 text-center text-sm text-gray-500 flex items-center justify-center h-4"></p>
+                    <p id="actionFeedback"
+                        class="mt-3 text-center text-sm text-gray-500 flex items-center justify-center h-4"></p>
                 </div>
             </div>
 
@@ -353,19 +352,21 @@
                                 class="w-16 h-16 mx-auto mb-4 bg-green-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">
                                 ✓
                             </div>
-                            <h2 class="text-xl font-bold mb-2">TERIMA KASIH</h2>
-                            <div class="text-sm space-y-2">
+                            <h2 class="text-xl font-bold mb-2">THANK YOU</h2>
+                            <div class="text-sm space-y-2 md:px-6">
                                 <p>
-                                    Kalau bermanfaat, jangan lupa support dengan follow, beli promo via tag lokasi, atau
-                                    kirim GoPay ke creator ya!
+                                    If you found this helpful, don’t forget to support by following, buying a promo via
+                                    location tag, or sending a GoPay tip to the creator!
                                 </p>
                             </div>
                             <div class="flex space-x-4 mt-2">
-                                <a href="https://www.tiktok.com/@maysiella" target="_blank" rel="noopener noreferrer" class="flex-1">
+                                <a href="https://www.tiktok.com/@maysiella" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1">
                                     <img src="../assets/img/QR_Tiktok.png" alt="Tiktok @maysiella">
                                     <span class="text-xs">TIKTOK</span>
                                 </a>
-                                <a href="https://www.tiktok.com/@maysiella" target="_blank" rel="noopener noreferrer" class="flex-1">
+                                <a href="https://www.tiktok.com/@maysiella" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1">
                                     <img src="../assets/img/QR_Gopay.png" alt="Gopay siella">
                                     <span class="text-xs">GOPAY</span>
                                 </a>
@@ -435,13 +436,14 @@
             <div class="flex justify-between mt-8">
                 <button id="prevBtn"
                     class="box-border px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-400 border border-gray-700 hidden">
-                    Kembali
+                    Back
                 </button>
-                <button id="resetBtn" class="ml-auto mr-2 box-border px-4 py-2 bg-white border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white hidden">
+                <button id="resetBtn"
+                    class="ml-auto mr-2 box-border px-4 py-2 bg-white border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white hidden">
                     Reset
                 </button>
                 <button id="nextBtn" class="box-border px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-                    Lanjutkan
+                    Continue
                 </button>
             </div>
         </div>
@@ -532,7 +534,7 @@
                 validateNextBtn();
             } else if (currentStep === 1) {
                 resetData();
-                nextBtn.textContent = "Lanjutkan";
+                nextBtn.textContent = "Continue";
                 nextBtn.classList.add("ml-auto"); // geser kanan
                 resetBtn.classList.add("hidden");
                 validateNextBtn();
@@ -543,7 +545,7 @@
 
                 validateNextBtn();
             } else if (currentStep === 3) {
-                nextBtn.textContent = "Lanjutkan";
+                nextBtn.textContent = "Continue";
                 resetBtn.classList.add("hidden");
                 validateNextBtn();
             } else if (currentStep === steps.length - 1) {
@@ -570,7 +572,7 @@
 
             // 1️⃣ cek nama file
             if (file.name !== "following.html") {
-                info.textContent = "⚠️ File tidak valid. Pastikan upload file bernama following.html";
+                info.textContent = "⚠️ Invalid file. Upload the file named following.html";
                 flwing = [];
                 return;
             }
@@ -609,7 +611,7 @@
 
                 // 5️⃣ kalau tetap kosong → tampilkan pesan gagal
                 if (usernames.length === 0) {
-                    info.textContent = "⚠️ Ada update format dari Instagram, hubungi creator";
+                    info.textContent = "⚠️ Instagram has updated its file format. Please contact the creator.";
                     flwing = [];
                     return;
                 }
@@ -646,7 +648,7 @@
 
             // 🔍 validasi nama file
             if (file.name !== "followers_1.html") {
-                info.textContent = "⚠️ File tidak valid. Pastikan upload file bernama followers_1.html";
+                info.textContent = "⚠️ Invalid file. Upload the file named followers_1.html";
                 flwer = [];
                 return;
             }
@@ -681,7 +683,7 @@
                 }
                 // --- Tidak cocok format apapun ---
                 else {
-                    alert("Ada update format dari Instagram, hubungi creator");
+                    alert("⚠️ Instagram has updated its file format. Please contact the creator.");
                     return;
                 }
 
@@ -697,7 +699,7 @@
             };
 
             reader.onerror = (e) => {
-                info.textContent = "❌ Error membaca file: " + e.target.error.name;
+                info.textContent = "❌ Error reading file: " + e.target.error.name;
             };
 
             reader.readAsText(file);
@@ -785,11 +787,11 @@
                     resCopy.classList.remove("hidden");
 
                     if (unflw.length === 0) {
-                        infoUnfol.textContent = "Tidak ada user yang unfollow 🎉";
+                        infoUnfol.textContent = "🎉 No users have unfollowed you!";
                     } else {
                         let preview = unflw.slice(0, 3).join(", ");
-                        if (unflw.length > 3) preview += `, and ${unflw.length - 3} lainnya`;
-                        infoUnfol.innerHTML = `Ditemukan <b>${unflw.length} users yang unfollow</b>: ${preview}`;
+                        if (unflw.length > 3) preview += `, and ${unflw.length - 3} others`;
+                        infoUnfol.innerHTML = `Found <b>${unflw.length} users who unfollowed</b>: ${preview}`;
                     }
                 }, 3000);
             }
@@ -843,9 +845,9 @@
                     document.execCommand("copy");
                     document.body.removeChild(ta);
                 }
-                feedback.textContent = "Data unfollow users disalin ke clipboard ✅";
+                feedback.textContent = "✅ Unfollow user data copied to clipboard";
             } catch (err) {
-                feedback.textContent = "Gagal menyalin: " + (err.message || err);
+                feedback.textContent = "❌ Failed to copy: " + (err.message || err);
             }
             setTimeout(() => feedback.textContent = "", 2500);
         }
@@ -865,9 +867,9 @@
                 a.click();
                 a.remove();
                 URL.revokeObjectURL(url);
-                feedback.textContent = "File berhasil diunduh ✅";
+                feedback.textContent = "✅ File downloaded successfully";
             } catch (err) {
-                feedback.textContent = "Gagal mengunduh: " + (err.message || err);
+                feedback.textContent = "❌ Failed to download: " + (err.message || err);
             }
             setTimeout(() => feedback.textContent = "", 2500);
         }
@@ -877,7 +879,7 @@
         // ===============================
         function openTikTok(url) {
             window.open(url, "_blank", "noopener,noreferrer");
-            feedback.textContent = "Terima kasih atas dukungannya! 🙏";
+            feedback.textContent = "🙏 Thank you for your support!";
             setTimeout(() => feedback.textContent = "", 2500);
         }
 
