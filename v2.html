@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Tools Check Folbek | Tiktok: @maysiella | IG: @siella_</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./assets/css/styles.css" rel="stylesheet" />
     <meta name="description"
         content="Tools sangat aman yang dapat digunakan oleh para content creator atau yang membutuhkan untuk melakukan pengecheckan siapa yang sudah di follow tapi belum folbek di IG. Tidak ada proses penyimpanan data di server ini. Jika berkenan, bantu follow dan komentar di IG @siella_">
     <!-- Google tag (gtag.js) -->
@@ -460,7 +460,7 @@
         const resShow = document.getElementById("resultShow");
         const resCopy = document.getElementById("resultCopy");
 
-        let currentStep = 4;
+        let currentStep = 0;
         let flwing = [];
         let flwer = [];
         let unflw = [];
@@ -845,7 +845,7 @@
                     document.execCommand("copy");
                     document.body.removeChild(ta);
                 }
-                feedback.textContent = "Teks unfollow disalin ke clipboard ✅";
+                feedback.textContent = "Data unfollow users disalin ke clipboard ✅";
             } catch (err) {
                 feedback.textContent = "Gagal menyalin: " + (err.message || err);
             }
