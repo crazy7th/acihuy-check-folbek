@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Tools Check Folbek | Tiktok: @maysiella | IG: @siella_</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description"
+        content="Tools sangat aman yang dapat digunakan oleh para content creator atau yang membutuhkan untuk melakukan pengecheckan siapa yang sudah di follow tapi belum folbek di IG. Tidak ada proses penyimpanan data di server ini. Jika berkenan, bantu follow dan komentar di IG @siella_">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E015SNMTP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2E015SNMTP');
+    </script>
+</head>
+
+<body class="bg-gray-100 flex flex-col space-y-2 md:space-y-4">
+
+    <!-- Step Indicator (Sticky) -->
+    <div class="sticky top-0 z-20">
+        <div class="max-w-lg mx-auto px-4 py-2">
+            <div class="flex justify-between items-center">
+                <div class="w-full flex items-center">
+                    <div id="step-indicator" class="flex w-full justify-between relative">
+                        <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -z-10"></div>
+                        <div class="absolute top-1/2 left-0 h-1 bg-blue-500 transition-all duration-500 -z-10"
+                            id="progress-bar"></div>
+
+                        <!-- Step Bullets -->
+                        <div class="flex-1 text-center">
+                            <div
+                                class="w-10 h-10 mx-auto rounded-full flex items-center justify-center border-2 border-blue-500 bg-blue-500 text-white font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <div
+                                class="w-10 h-10 mx-auto rounded-full flex items-center justify-center border-2 border-gray-300 bg-white text-gray-500 font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <div
+                                class="w-10 h-10 mx-auto rounded-full flex items-center justify-center border-2 border-gray-300 bg-white text-gray-500 font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <div
+                                class="w-10 h-10 mx-auto rounded-full flex items-center justify-center border-2 border-gray-300 bg-white text-gray-500 font-bold">
+                                4
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <div
+                                class="w-10 h-10 mx-auto rounded-full flex items-center justify-center border-2 border-gray-300 bg-white text-gray-500 font-bold">
+                                5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wizard Container -->
+    <div class="flex-1 flex items-center justify-center px-4">
+        <div
+            class="w-full max-w-lg bg-white rounded-2xl shadow-lg p-4 md:px-10 md:py-8 h-[580px] overflow-hidden flex flex-col">
+
+            <!-- Step Content -->
+            <div id="step-1" class="step-content flex-1 overflow-y-auto">
+                <div class="text-center flex flex-col justify-between h-full">
+                    <div class="flex-1 flex flex-col space-y-4">
+                        <img src="./assets/img/hero_cek_folbek.png" alt="Intro" class="mx-auto rounded-lg w-full" />
+                        <div class="px-6 flex flex-col space-y-2 md:px-0">
+                            <h1 class="text-xl font-bold">
+                                INSTAGRAM CEK UNFOLLOW 2.0
+                            </h1>
+                            <p class="text-sm md:text-base">
+                                Ini adalah tools gratis, untuk membantu kamu mengecheck siapa saja orang yang
+                                <b>Unfollow</b>
+                                kamu
+                            </p>
+                        </div>
+
+                    </div>
+                    <div
+                        class="flex items-center justify-center space-x-3 text-sm p-2 border border-dashed border-gray-400 rounded-lg">
+                        <div class="text-xs">
+                            Follow Us
+                        </div>
+                        <div class="flex space-x-2 items-center">
+                            <div>
+                                <a href="https://www.instagram.com/siella_" target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center space-x-1 hover:text-[#ec667c]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" fill="#000"
+                                        class="w-6 h-6">
+                                        <path
+                                            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                    </svg>
+                                    <p>siella_</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.tiktok.com/@maysiella" target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center space-x-1 hover:text-[#e3294d]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 25 42"
+                                        height="20" width="12" alt="TikTok"
+                                        class="css-1keber0-5e6d46e3--StyledSingleLogoLight e1487oh23">
+                                        <g clip-path="url(#a)">
+                                            <path fill="#25F4EE"
+                                                d="M9.875 16.842v-1.119A9 9 0 0 0 8.7 15.64c-4.797-.006-8.7 3.9-8.7 8.708a8.7 8.7 0 0 0 3.718 7.134A8.68 8.68 0 0 1 1.38 25.55c0-4.737 3.794-8.598 8.495-8.707">
+                                            </path>
+                                            <path fill="#25F4EE"
+                                                d="M10.087 29.526c2.14 0 3.89-1.707 3.966-3.83l.007-18.968h3.462a7 7 0 0 1-.109-1.202h-4.727l-.006 18.969a3.98 3.98 0 0 1-3.967 3.829 3.9 3.9 0 0 1-1.846-.46 3.95 3.95 0 0 0 3.22 1.662m13.905-16.36v-1.055a6.5 6.5 0 0 1-3.584-1.068 6.57 6.57 0 0 0 3.584 2.123">
+                                            </path>
+                                            <path fill="#FE2C55"
+                                                d="M20.408 11.043a6.54 6.54 0 0 1-1.616-4.315h-1.265a6.56 6.56 0 0 0 2.881 4.315M8.707 20.365a3.98 3.98 0 0 0-3.974 3.976c0 1.528.87 2.858 2.134 3.523a3.94 3.94 0 0 1-.754-2.32 3.98 3.98 0 0 1 3.973-3.977c.41 0 .805.07 1.176.185V16.92a9 9 0 0 0-1.176-.083c-.07 0-.134.006-.204.006v3.708a4 4 0 0 0-1.175-.185">
+                                            </path>
+                                            <path fill="#FE2C55"
+                                                d="M23.992 13.166v3.676a11.25 11.25 0 0 1-6.579-2.116v9.622c0 4.8-3.903 8.713-8.706 8.713a8.67 8.67 0 0 1-4.99-1.579 8.7 8.7 0 0 0 6.37 2.781c4.797 0 8.706-3.906 8.706-8.714v-9.621a11.25 11.25 0 0 0 6.579 2.116v-4.73a6.5 6.5 0 0 1-1.38-.148">
+                                            </path>
+                                            <path fill="#000"
+                                                d="M17.413 24.347v-9.621a11.25 11.25 0 0 0 6.58 2.116v-3.676a6.57 6.57 0 0 1-3.584-2.123 6.6 6.6 0 0 1-2.887-4.315h-3.463l-.006 18.968a3.98 3.98 0 0 1-3.967 3.83 3.99 3.99 0 0 1-3.225-1.656 3.99 3.99 0 0 1-2.134-3.523A3.98 3.98 0 0 1 8.7 20.371c.409 0 .805.07 1.176.185v-3.708c-4.702.103-8.496 3.964-8.496 8.701 0 2.289.888 4.373 2.338 5.933a8.67 8.67 0 0 0 4.989 1.58c4.797 0 8.706-3.913 8.706-8.715">
+                                            </path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="a">
+                                                <path fill="#fff" d="M0 0h25v42H0z"></path>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+
+                                    <p>@maysiella</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step-2" class="step-content flex-1 overflow-y-auto hidden">
+                <div class="flex flex-col overflow-hidden h-full">
+                    <div class="flex-1 flex flex-col overflow-y-auto">
+                        <h2 class="text-xl font-bold mb-4 text-center">MENYIAPKAN DATA</h2>
+                        <div class="space-y-2 text-xs mb-4 overflow-y-auto">
+                            <p>Lakukan pengunduhan data following & follower dari Instagram kamu. Sebaiknya kamu lakukan
+                                ini
+                                sendiri,
+                                tanpa membagi akun kamu kepada orang lain.</p>
+                            <p>Tonton video tutorial di akun <a
+                                    href="https://www.tiktok.com/@maysiella/video/7371676362555313413?is_from_webapp=1&sender_device=pc&web_id=7477630731255957000"
+                                    target="_blank" rel="noopener noreferrer" class="text-red-800">@siella_ </a>untuk
+                                memudahkan.</p>
+                            <p>Lokasi unduh file ada di:</p>
+
+                            <ul class="list-disc pl-6">
+                                <li>
+                                    Pengaturan dan aktivitas
+                                </li>
+                                <li>
+                                    Pusat Akun
+                                </li>
+                                <li>
+                                    Informasi dan izin Anda
+                                </li>
+                                <li>
+                                    Ekspor informasi Anda
+                                </li>
+                                <li>
+                                    Buat ekspor
+                                </li>
+                                <li>
+                                    Ekspor ke perangkat:
+                                    <ul class="list-[circle] pl-6">
+                                        <li>
+                                            <b>Sesuaikan informasi:</b> cukup centang <b>Pengikut dan mengikuti</b>
+                                        </li>
+                                        <li>
+                                            <b>Rentang waktu:</b> agar lebih akurat, pilih <b>Sepanjang Waktu</b>
+                                        </li>
+                                        <li>
+                                            <b>Format:</b> pilih <b>HTML</b> (default)
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Klik <b>Mulai ekspor</b>
+                                </li>
+                                <li>
+                                    Tunggu beberapa menit.
+                                    <span class="hidden md:inline">Semakin banyak following & followernya, akan
+                                        membutuhkan
+                                        waktu yang semakin lama. Pastikan juga informasi yang diunduh hanya centang
+                                        bagian
+                                        <b>Pengikut dan mengikuti</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-2 p-2 text-sm rounded-lg bg-blue-50 text-blue-800 border border-blue-200">
+                        <!-- Icon bulat (i) -->
+                        <div
+                            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold">
+                            i
+                        </div>
+                        <!-- Teks info -->
+                        <div>
+                            Tools ini 100% dijamin aman,
+                            <a href="#" class="font-medium underline hover:text-blue-900">pelajari cara kerjanya</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="step-3" class="step-content flex-1 overflow-y-auto hidden">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-xl font-bold mb-4 text-center">Upload Files</h2>
+                    <div class="space-y-4 flex-1 flex flex-col">
+                        <div class="flex-1 space-y-1">
+                            <p>
+                                <b>1. File Followers:</b>
+                            </p>
+                            <label
+                                class="relative overflow-hidden text-gray-600 block border-2 border-dashed border-gray-400 rounded-lg p-6 md:py-10 cursor-pointer hover:bg-gray-50">
+                                <p>Drop file <b>Follower</b> di sini atau klik untuk upload</p>
+                                <p>Nama file: <b>followers_1.html</b></p>
+                                <input type="file" id="inputFollower" class="hidden" onchange="checkFollower()" />
+                                <!-- ✅ overlay hijau -->
+                                <div id="followerOverlay"
+                                    class="absolute inset-0 bg-green-500 bg-opacity-80 flex items-center justify-center hidden">
+                                    <!-- checkmark -->
+                                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                            </label>
+                            <p id="infoFollower" class="text-sm text-gray-600"></p>
+                        </div>
+                        <div class="flex-1 space-y-1">
+                            <p>
+                                <b>2. File Following:</b>
+                            </p>
+                            <label
+                                class="relative text-gray-600 block border-2 border-dashed border-gray-400 rounded-lg p-6 md:py-10 cursor-pointer hover:bg-gray-50">
+                                <p>Drop file <b>Following</b> di sini atau klik untuk upload</p>
+                                <p>Nama file: <b>following.html</b></p>
+                                <input type="file" id="inputFollowing" class="hidden" onchange="checkFollowing()" />
+                                <!-- ✅ overlay hijau -->
+                                <div id="followingOverlay"
+                                    class="absolute inset-0 bg-green-500 bg-opacity-80 flex items-center justify-center hidden">
+                                    <!-- checkmark -->
+                                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                            </label>
+                            <p id="infoFollowing" class="text-sm text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="step-4" class="step-content flex-1 overflow-y-auto flex items-center justify-center hidden">
+                <div id="resultProcess" class="max-w-md flex flex-col space-y-4">
+                    <!-- Title & Text -->
+                    <div class="text-center">
+                        <h2 class="text-xl font-bold mb-2">DATA SEDANG DIPROSES</h2>
+                        <p class="text-gray-600">Sedang memproses data Anda, mohon tunggu...</p>
+                    </div>
+
+                    <!-- Loading dots -->
+                    <div class="flex justify-center space-x-2">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
+                    </div>
+                </div>
+                <div id="resultShow" class="max-w-md flex flex-col space-y-4 hidden">
+                    <!-- Title & Text -->
+                    <div class="text-center">
+                        <h2 class="text-xl font-bold mb-2">DATA SELESAI DIPROSES ✅</h2>
+                        <p id="infoUnfollow" class="mt-4 text-center text-gray-600">
+                            Tidak ada user yang unfollow 🎉
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step-5" class="step-content flex-1 overflow-y-auto hidden">
+                <div class="flex flex-col space-y-8 h-full justify-between">
+                    <div class="flex-1 text-center flex flex-col space-y-4">
+                        <div>
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 bg-green-500 text-white flex items-center justify-center rounded-full">
+                                ✓
+                            </div>
+                            <h2 class="text-xl font-bold mb-2">TERIMA KASIH</h2>
+                            <p class="text-gray-600">Proses pengecheckan telah selesai dilakukan.</p>
+                        </div>
+                        <div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- 1. Copy to clipboard -->
+                                <div class="flex flex-col space-y-1 items-center">
+                                    <button id="btnCopy" aria-label="Copy data"
+                                        class="flex items-center gap-2 w-full h-full justify-center px-6 py-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none">
+                                        <!-- Clipboard SVG -->
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 2H15V4H9V2Z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M7 6H17C18.1046 6 19 6.89543 19 8V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V8C5 6.89543 5.89543 6 7 6Z" />
+                                        </svg>
+                                        <span class="text-sm font-medium">Copy Data</span>
+                                    </button>
+
+                                    <span class="text-xs italic totalUnfl">0 user found</span>
+                                </div>
+
+                                <!-- 2. Download .txt -->
+                                <div class="flex flex-col space-y-1 items-center">
+                                    <button id="btnDownload" aria-label="Download file"
+                                        class="flex items-center gap-2 w-full h-full justify-center px-6 py-4 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none">
+                                        <!-- Download SVG -->
+                                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3V15" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8 11L12 15L16 11" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21H3" />
+                                        </svg>
+                                        <span class="text-sm font-medium">Download File</span>
+                                    </button>
+
+                                    <span class="text-xs italic totalUnfl">0 user found</span>
+                                </div>
+                            </div>
+
+                            <!-- Feedback text -->
+                            <p id="actionFeedback" class="mt-3 text-center text-sm text-gray-500"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm mb-4 text-center">
+                            Jika ini bermanfaat, support creator dengan cara follow akun dan juga melakukan pembelian
+                            promo makanan, minuman / hotel melalui tag lokasi di akun tiktok creator
+                        </p>
+                        <div
+                            class="flex items-center justify-center space-x-3 text-sm p-2 border border-dashed border-gray-400 rounded-lg">
+                            <div class="text-xs">
+                                Follow Us
+                            </div>
+                            <div class="flex space-x-2 items-center">
+                                <div>
+                                    <a href="https://www.instagram.com/siella_" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center space-x-1 hover:text-[#ec667c]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" fill="#000"
+                                            class="w-6 h-6">
+                                            <path
+                                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                        </svg>
+                                        <p>siella_</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://www.tiktok.com/@maysiella" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center space-x-1 hover:text-[#e3294d]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 25 42"
+                                            height="20" width="12" alt="TikTok"
+                                            class="css-1keber0-5e6d46e3--StyledSingleLogoLight e1487oh23">
+                                            <g clip-path="url(#a)">
+                                                <path fill="#25F4EE"
+                                                    d="M9.875 16.842v-1.119A9 9 0 0 0 8.7 15.64c-4.797-.006-8.7 3.9-8.7 8.708a8.7 8.7 0 0 0 3.718 7.134A8.68 8.68 0 0 1 1.38 25.55c0-4.737 3.794-8.598 8.495-8.707">
+                                                </path>
+                                                <path fill="#25F4EE"
+                                                    d="M10.087 29.526c2.14 0 3.89-1.707 3.966-3.83l.007-18.968h3.462a7 7 0 0 1-.109-1.202h-4.727l-.006 18.969a3.98 3.98 0 0 1-3.967 3.829 3.9 3.9 0 0 1-1.846-.46 3.95 3.95 0 0 0 3.22 1.662m13.905-16.36v-1.055a6.5 6.5 0 0 1-3.584-1.068 6.57 6.57 0 0 0 3.584 2.123">
+                                                </path>
+                                                <path fill="#FE2C55"
+                                                    d="M20.408 11.043a6.54 6.54 0 0 1-1.616-4.315h-1.265a6.56 6.56 0 0 0 2.881 4.315M8.707 20.365a3.98 3.98 0 0 0-3.974 3.976c0 1.528.87 2.858 2.134 3.523a3.94 3.94 0 0 1-.754-2.32 3.98 3.98 0 0 1 3.973-3.977c.41 0 .805.07 1.176.185V16.92a9 9 0 0 0-1.176-.083c-.07 0-.134.006-.204.006v3.708a4 4 0 0 0-1.175-.185">
+                                                </path>
+                                                <path fill="#FE2C55"
+                                                    d="M23.992 13.166v3.676a11.25 11.25 0 0 1-6.579-2.116v9.622c0 4.8-3.903 8.713-8.706 8.713a8.67 8.67 0 0 1-4.99-1.579 8.7 8.7 0 0 0 6.37 2.781c4.797 0 8.706-3.906 8.706-8.714v-9.621a11.25 11.25 0 0 0 6.579 2.116v-4.73a6.5 6.5 0 0 1-1.38-.148">
+                                                </path>
+                                                <path fill="#000"
+                                                    d="M17.413 24.347v-9.621a11.25 11.25 0 0 0 6.58 2.116v-3.676a6.57 6.57 0 0 1-3.584-2.123 6.6 6.6 0 0 1-2.887-4.315h-3.463l-.006 18.968a3.98 3.98 0 0 1-3.967 3.83 3.99 3.99 0 0 1-3.225-1.656 3.99 3.99 0 0 1-2.134-3.523A3.98 3.98 0 0 1 8.7 20.371c.409 0 .805.07 1.176.185v-3.708c-4.702.103-8.496 3.964-8.496 8.701 0 2.289.888 4.373 2.338 5.933a8.67 8.67 0 0 0 4.989 1.58c4.797 0 8.706-3.913 8.706-8.715">
+                                                </path>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="a">
+                                                    <path fill="#fff" d="M0 0h25v42H0z"></path>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                        <p>@maysiella</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-8">
+                <button id="prevBtn"
+                    class="px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-400 border border-gray-700 hidden">
+                    Kembali
+                </button>
+                <button id="nextBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                    Lanjutkan
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll(".step-content");
+        const circles = document.querySelectorAll("#step-indicator div > div");
+        const progress = document.getElementById("progress-bar");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const resultProcess = document.getElementById("resultProcess");
+        const resultShow = document.getElementById("resultShow");
+
+        let currentStep = 0;
+        let flwing = [];
+        let flwer = [];
+        let unflw = [];
+
+        let infoUnfol = document.querySelector("#infoUnfollow");
+        infoUnfol.textContent = "";
+
+        function resetData() {
+            // reset array global
+            flwing = [];
+            flwer = [];
+
+            // reset info text
+            document.getElementById("infoFollower").textContent = "";
+            document.getElementById("infoFollowing").textContent = "";
+
+            // reset input file
+            const inputFollower = document.querySelector("#inputFollower");
+            const inputFollowing = document.querySelector("#inputFollowing");
+
+            if (inputFollower) {
+                inputFollower.value = "";
+                inputFollower.disabled = false;
+            }
+            if (inputFollowing) {
+                inputFollowing.value = "";
+                inputFollowing.disabled = false;
+            }
+
+            // sembunyikan overlay
+            const followerOverlay = document.getElementById("followerOverlay");
+            const followingOverlay = document.getElementById("followingOverlay");
+
+            if (followerOverlay) followerOverlay.classList.add("hidden");
+            if (followingOverlay) followingOverlay.classList.add("hidden");
+        }
+
+
+        function updateStep() {
+            steps.forEach((step, i) => step.classList.toggle("hidden", i !== currentStep));
+            circles.forEach((circle, i) => {
+                if (i <= currentStep) {
+                    circle.classList.add("bg-blue-500", "border-blue-500", "text-white");
+                    circle.classList.remove("bg-white", "text-gray-500", "border-gray-300");
+                } else {
+                    circle.classList.add("bg-white", "text-gray-500", "border-gray-300");
+                    circle.classList.remove("bg-blue-500", "border-blue-500", "text-white");
+                }
+            });
+            console.log('currentStep: ', currentStep);
+            progress.style.width = `${(currentStep / (steps.length - 1)) * 100}%`;
+
+            // reset posisi Next
+            nextBtn.classList.remove("ml-auto");
+
+            // default
+            prevBtn.classList.remove("hidden");
+            nextBtn.disabled = false;
+            nextBtn.classList.remove("bg-gray-300", "text-gray-500");
+            nextBtn.classList.add("bg-blue-500", "text-white");
+
+            if (currentStep === 0) {
+                resetData();
+                prevBtn.classList.add("hidden");
+                nextBtn.textContent = "Saya Sudah Follow, Yuk Lanjut 🚀";
+                nextBtn.classList.add("ml-auto"); // geser kanan
+                validateNextBtn();
+            } else if (currentStep === 1) {
+                resetData();
+                nextBtn.textContent = "Lanjutkan";
+                nextBtn.classList.add("ml-auto"); // geser kanan
+                validateNextBtn();
+            } else if (currentStep === 2) {
+                prevBtn.classList.remove("hidden");
+                nextBtn.textContent = "Check Unfollow";
+
+                validateNextBtn();
+            } else if (currentStep === 3) {
+                nextBtn.textContent = "Lanjutkan";
+                validateNextBtn();
+            } else if (currentStep === steps.length - 1) {
+                prevBtn.classList.add("hidden");
+                nextBtn.textContent = "Check Akun Lainnya";
+                nextBtn.classList.add("ml-auto"); // geser kanan
+                validateNextBtn();
+            }
+        }
+
+        // jalankan saat awal
+        updateStep();
+
+        // check following
+        const checkFollowing = () => {
+            let files = document.querySelector("#inputFollowing").files;
+            let info = document.querySelector("#infoFollowing");
+            info.textContent = "";
+
+            if (files.length === 0) return;
+
+            const file = files[0];
+
+            // 1️⃣ cek nama file
+            if (file.name !== "following.html") {
+                info.textContent = "⚠️ File tidak valid. Pastikan upload file bernama following.html";
+                flwing = [];
+                return;
+            }
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                const html = e.target.result;
+
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, "text/html");
+
+                let usernames = [];
+
+                // 2️⃣ format lama (h2)
+                let h2s = Array.from(doc.querySelectorAll("h2"));
+                if (h2s.length > 0) {
+                    usernames = h2s.map(el => el.textContent.trim());
+                }
+                // 3️⃣ format _u/
+                else if (doc.querySelector("a[href*='/_u/']")) {
+                    let links = Array.from(doc.querySelectorAll("a[href*='/_u/']"));
+                    usernames = links.map(link => {
+                        let href = link.getAttribute("href");
+                        return href.split("/_u/")[1];
+                    });
+                }
+                // 4️⃣ format a[href*='instagram.com/username']
+                else if (doc.querySelector("a[href*='instagram.com/']")) {
+                    let links = Array.from(doc.querySelectorAll("a[href*='instagram.com/']"));
+                    usernames = links.map(link => {
+                        let href = link.getAttribute("href");
+                        return href.split("instagram.com/")[1].replace(/\/$/, ""); // ambil username & hapus trailing slash
+                    });
+                }
+
+                // 5️⃣ kalau tetap kosong → tampilkan pesan gagal
+                if (usernames.length === 0) {
+                    info.textContent = "⚠️ Ada update format dari Instagram, hubungi creator";
+                    flwing = [];
+                    return;
+                }
+
+                // simpan ke array global
+                flwing.push(...usernames);
+
+                // preview maks 3 user
+                let preview = usernames.slice(0, 3).join(", ");
+                if (usernames.length > 3) {
+                    preview += `, and ${usernames.length - 3} others`;
+                }
+
+                info.textContent = preview;
+                validateNextBtn();
+            };
+
+            reader.onerror = (e) => {
+                info.textContent = "❌ Error membaca file: " + e.target.error.name;
+            };
+
+            reader.readAsText(file);
+        };
+
+        // check follower
+        const checkFollower = () => {
+            let files = document.querySelector("#inputFollower").files;
+            let info = document.querySelector("#infoFollower");
+            info.textContent = "";
+
+            if (files.length === 0) return;
+
+            const file = files[0];
+
+            // 🔍 validasi nama file
+            if (file.name !== "followers_1.html") {
+                info.textContent = "⚠️ File tidak valid. Pastikan upload file bernama followers_1.html";
+                flwer = [];
+                return;
+            }
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                const fileContent = e.target.result;
+                let usernames = [];
+
+                // --- Cek format lama ---
+                if (fileContent.includes('https://www.instagram.com/') && !fileContent.includes('_u/')) {
+                    let splitText = fileContent.split('https://www.instagram.com/');
+                    for (let i = 1; i < splitText.length; i++) {
+                        let getUsername = splitText[i].substring(0, splitText[i].indexOf('"'));
+                        usernames.push(getUsername);
+                        flwer.push(getUsername);
+                    }
+                }
+                // --- Cek format baru (_u/) ---
+                else if (fileContent.includes('https://www.instagram.com/_u/')) {
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(fileContent, "text/html");
+
+                    let links = Array.from(doc.querySelectorAll("a[href*='/_u/']"));
+                    usernames = links.map(link => {
+                        let href = link.getAttribute("href");
+                        return href.split("/_u/")[1]; // ambil setelah /_u/
+                    });
+
+                    flwer.push(...usernames);
+                }
+                // --- Tidak cocok format apapun ---
+                else {
+                    alert("Ada update format dari Instagram, hubungi creator");
+                    return;
+                }
+
+                // --- Tampilkan preview ---
+                let preview = usernames.slice(0, 3).join(", ");
+                if (usernames.length > 3) {
+                    preview += `, and ${usernames.length - 3} others`;
+                }
+                info.textContent = preview;
+                validateNextBtn();
+            };
+
+            reader.onerror = (e) => {
+                info.textContent = "❌ Error membaca file: " + e.target.error.name;
+            };
+
+            reader.readAsText(file);
+        };
+
+        function validateNextBtn() {
+            const nextBtn = document.getElementById("nextBtn");
+
+            // ✅ follower overlay
+            const followerOverlay = document.getElementById("followerOverlay");
+            const inputFollower = document.getElementById("inputFollower");
+
+            // ✅ following overlay
+            const followingOverlay = document.getElementById("followingOverlay");
+            const inputFollowing = document.getElementById("inputFollowing");
+
+            // kalau sudah ada follower
+            if (flwer.length > 0) {
+                followerOverlay?.classList.remove("hidden");
+                inputFollower.disabled = true;
+            } else {
+                followerOverlay?.classList.add("hidden");
+                inputFollower.disabled = false;
+            }
+
+            // kalau sudah ada following
+            if (flwing.length > 0) {
+                followingOverlay?.classList.remove("hidden");
+                inputFollowing.disabled = true;
+            } else {
+                followingOverlay?.classList.add("hidden");
+                inputFollowing.disabled = false;
+            }
+
+            // 🔹 aturan tombol Next
+            if (currentStep === 2) {
+                const ready = flwer.length > 0 && flwing.length > 0;
+
+                nextBtn.disabled = !ready;
+
+                nextBtn.classList.toggle("bg-gray-300", !ready);
+                nextBtn.classList.toggle("text-gray-500", !ready);
+
+                nextBtn.classList.toggle("bg-blue-500", ready);
+                nextBtn.classList.toggle("text-white", ready);
+                nextBtn.classList.toggle("hover:bg-blue-600", ready);
+            } else {
+                nextBtn.disabled = false;
+                nextBtn.classList.add("bg-blue-500", "text-white", "hover:bg-blue-600");
+                nextBtn.classList.remove("bg-gray-300", "text-gray-500");
+            }
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateStep();
+            }
+        });
+
+        let totalUnflEl = document.querySelectorAll(".totalUnfl");
+        function updateTotalUnfl(unflwlength) {
+            console.log('unflw: ', unflwlength);
+
+            totalUnflEl.forEach(el => {
+                if (unflwlength === 0) {
+                    el.textContent = "0 user data";
+                } else {
+                    el.textContent = `${unflwlength} ${unflwlength === 1 ? "user found" : "users data"}`;
+                }
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            console.log('currentStep...', currentStep);
+
+            if (currentStep === 2) {
+                // Step-3: jalankan pengecekan unfollow
+                unflw = flwing.filter(val => !flwer.includes(val));
+                updateTotalUnfl(unflw.length);
+
+                // langsung jalankan step-3
+                setTimeout(() => {
+                    console.log("unfollow:", unflw);
+                    resultProcess.classList.add("hidden");
+                    resultShow.classList.remove("hidden");
+
+                    if (unflw.length === 0) {
+                        infoUnfol.textContent = "Tidak ada user yang unfollow 🎉";
+                    } else {
+                        let preview = unflw.slice(0, 3).join(", ");
+                        if (unflw.length > 3) preview += `, and ${unflw.length - 3} lainnya`;
+                        infoUnfol.innerHTML = `Ditemukan <b>${unflw.length} users yang unfollow</b>: ${preview}`;
+                    }
+                }, 3000);
+            }
+
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateStep();
+            } else {
+                currentStep = 0;
+                updateStep();
+            }
+
+            if (unflw.length === 0) {
+
+            }
+        });
+
+    </script>
+
+    <script>
+        // ===============================
+        // Data dan konfigurasi
+        // ===============================
+        const filename = "unfollowers.txt"; // nama file .txt
+        const tiktokProfileURL = "https://www.tiktok.com/@maysiella"; // ganti sesuai akunmu
+
+        const feedback = document.getElementById("actionFeedback");
+
+        // ===============================
+        // Helper: array -> text
+        // ===============================
+        function arrayToText(arr) {
+            return arr.join("\n");
+        }
+
+        // ===============================
+        // Copy to clipboard
+        // ===============================
+        async function copyToClipboard(arr) {
+            const text = arrayToText(arr);
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    const ta = document.createElement("textarea");
+                    ta.value = text;
+                    ta.style.position = "fixed";
+                    ta.style.left = "-9999px";
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(ta);
+                }
+                feedback.textContent = "Teks unfollow disalin ke clipboard ✅";
+            } catch (err) {
+                feedback.textContent = "Gagal menyalin: " + (err.message || err);
+            }
+            setTimeout(() => feedback.textContent = "", 2500);
+        }
+
+        // ===============================
+        // Download .txt file
+        // ===============================
+        function downloadTxtFile(arr, filename) {
+            const text = arrayToText(arr);
+            try {
+                const blob = new Blob([text], { type: "text/plain" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+                feedback.textContent = "File berhasil diunduh ✅";
+            } catch (err) {
+                feedback.textContent = "Gagal mengunduh: " + (err.message || err);
+            }
+            setTimeout(() => feedback.textContent = "", 2500);
+        }
+
+        // ===============================
+        // Open TikTok profile
+        // ===============================
+        function openTikTok(url) {
+            window.open(url, "_blank", "noopener,noreferrer");
+            feedback.textContent = "Terima kasih atas dukungannya! 🙏";
+            setTimeout(() => feedback.textContent = "", 2500);
+        }
+
+        // ===============================
+        // Event listeners
+        // ===============================
+        document.getElementById("btnCopy").addEventListener("click", () => copyToClipboard(unflw));
+        document.getElementById("btnDownload").addEventListener("click", () => downloadTxtFile(unflw, filename));
+        // document.getElementById("btnSupport").addEventListener("click", () => openTikTok(tiktokProfileURL));
+    </script>
+</body>
+
+</html>
