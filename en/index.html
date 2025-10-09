@@ -15,7 +15,7 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-    
+
         const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
         if (!isLocal) {
             gtag('js', new Date());
@@ -27,6 +27,77 @@
 </head>
 
 <body class="bg-gray-100 flex flex-col space-y-1 md:space-y-4 h-screen">
+
+    <!-- Modal Overlay -->
+    <div id="infoModal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+
+        <div
+            class="max-w-md w-full mx-4 bg-white shadow-lg rounded-xl p-4 text-gray-700 border border-gray-100 relative transform scale-95 transition-transform duration-300">
+
+            <div class="absolute top-0 left-0 w-full flex items-center">
+                <h2 class="flex-1 text-xl font-bold text-gray-800 text-center flex justify-center">
+                    A Little Note from Us 💬
+                </h2>
+                <button id="closeModal"
+                    class="bg-gray-600 p-2 rounded-tr-xl text-gray-400 hover:text-white transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 1. Gratis -->
+            <div class="flex items-start gap-3 mt-8 mb-3">
+                <div class="w-8 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-500 flex-shrink-0" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8l8-4 8 4v8l-8 4-8-4V8z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <p>
+                        <span class="font-semibold">No Fees, No Subscriptions.</span>
+                        This tool is safe and completely free.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Apresiasi -->
+            <div class="flex items-start gap-3 mb-3">
+                <div class="w-8 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-pink-500" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <p>
+                        If this website helped you, don’t forget to <b>say thanks</b> or show <b>a little
+                            appreciation</b> 🙌
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Masukan -->
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-start gap-3">
+                <div>
+                    <p class="font-semibold text-blue-700">Share your feedback kindly 🙏</p>
+                    <p class="text-sm text-blue-600 mt-1">
+                        We’re only human too, but we’ll always do our best to stay open to constructive feedback.
+                        Deliver it politely, clearly, and briefly. It really helps us a lot.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center text-sm text-gray-500">
+                <p>Thank you for using this website 💖</p>
+            </div>
+        </div>
+    </div>
 
     <div class="absolute top-[80px] right-0">
         <div class="relative inline-block text-left">
@@ -41,8 +112,7 @@
             </button>
 
             <!-- Dropdown menu -->
-            <div id="langMenu"
-                class="absolute right-0 w-20 bg-white text-gray-800 border border-gray-200 hidden">
+            <div id="langMenu" class="absolute right-0 w-20 bg-white text-gray-800 border border-gray-200 hidden">
                 <a href="../index.html" class="block px-4 py-2 hover:bg-gray-200">🇮🇩 ID</a>
                 <a href="#" class="block px-4 py-2 bg-gray-100 hover:bg-gray-200">🇬🇧 EN</a>
             </div>
@@ -328,6 +398,12 @@
                 </div>
 
                 <div id="resultCopy" class="hidden">
+                    <div class="mb-5">
+                        <p id="infoUnfollow" class="text-center text-blue-600 text-sm">
+                            Use “Copy Data” to duplicate all the information. You can then paste it into chat, Excel, or
+                            any other place you need.
+                        </p>
+                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- 1. Copy to clipboard -->
                         <div class="flex flex-col space-y-1 items-center">
@@ -461,19 +537,48 @@
             <!-- Navigation Buttons -->
             <div class="flex justify-between mt-8">
                 <button id="prevBtn"
-                    class="box-border px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-400 border border-gray-700 hidden">
+                    class="box-border p-2 md:px-4 bg-white text-gray-700 rounded-lg hover:bg-gray-400 border border-gray-700 hidden">
                     Back
                 </button>
                 <button id="resetBtn"
-                    class="ml-auto mr-2 box-border px-4 py-2 bg-white border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white hidden">
+                    class="ml-auto mr-2 box-border p-2 md:px-4 bg-white border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white hidden">
                     Reset
                 </button>
-                <button id="nextBtn" class="box-border px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                <button id="nextBtn" class="box-border p-2 md:px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
                     Continue
                 </button>
             </div>
         </div>
     </div>
+
+    <script>
+        const modal = document.getElementById("infoModal");
+        const closeModal = document.getElementById("closeModal");
+
+        // Tampilkan modal dengan animasi
+        setTimeout(() => {
+            modal.classList.remove("opacity-0", "pointer-events-none");
+            modal.firstElementChild.classList.remove("scale-95");
+        }, 100);
+
+        // Auto-close
+        setTimeout(() => {
+            hideModal();
+        }, 5000);
+
+        // Tombol close
+        closeModal.addEventListener("click", hideModal);
+
+        // Klik di luar modal = tutup
+        // modal.addEventListener("click", (e) => {
+        //     if (e.target === modal) hideModal();
+        // });
+
+        function hideModal() {
+            modal.classList.add("opacity-0", "pointer-events-none");
+            modal.firstElementChild.classList.add("scale-95");
+        }
+    </script>
 
     <script>
         const steps = document.querySelectorAll(".step-content");
